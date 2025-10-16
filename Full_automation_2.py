@@ -78,7 +78,7 @@ def load_excel_data(file_path):
         excel_file = pd.ExcelFile(file_path, engine=engine)
 
         for sheet_name in excel_file.sheet_names:
-            df = pd.read_excel('C://Users//TITANS//Desktop//Food_items.xls', sheet_name=sheet_name, header=None, engine=engine)
+            df = pd.read_excel('Food_items.xls', sheet_name=sheet_name, header=None, engine=engine)
 
             # Start from row 2 (index 2)
             for idx in range(2, len(df)):
@@ -367,4 +367,5 @@ with col2:
     cart_items = sum(item['quantity'] for item in st.session_state.cart.values())
     st.caption(f"🛒 In Cart: {cart_items}")
 with col3:
+
     st.caption(f"📜 Orders: {len(st.session_state.order_history)}")
